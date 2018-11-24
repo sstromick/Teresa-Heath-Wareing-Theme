@@ -1,0 +1,33 @@
+<?php
+/**
+ * Template part for displaying page content in page.php
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package THW
+ */
+
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+           <div id="banner-img">
+                <div id="banner-text">
+		   <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                   <p>Holding an event, conference or exhibition? Looking for a confident and interesting speaker on Social Media or Marketing? Look no further.</p>
+                </div>
+           </div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content nomargin">
+		<?php
+			the_content();
+
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'thw' ),
+				'after'  => '</div>',
+			) );
+		?>
+	</div><!-- .entry-content -->
+
+</article><!-- #post-<?php the_ID(); ?> -->
